@@ -68,17 +68,6 @@ const InfoContainer = styled.div`
       font-size: 20px;
       text-align: justify;
       overflow-y: scroll;
-
-      &::-webkit-scrollbar {
-        width: 6px;
-      }
-      &::-webkit-scrollbar-thumb {
-        background: #afd898;
-        border-radius: 6px;
-      }
-      &::-webkit-scrollbar-thumb:hover {
-        background: #477461;
-      }
     }
 
     img {

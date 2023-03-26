@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from "react";
+import { Link } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import Logo from "../../src/assets/img/Logo.png";
@@ -24,11 +24,13 @@ export default function Header() {
         <img src={Logo} alt="Re-Use" />
         <Menu>
           <div>
-            <TbHomeEco
-              className="header-icons"
-              data-tooltip-id="header-tooltip"
-              data-tooltip-content="Início"
-            />
+            <Link to="/">
+              <TbHomeEco
+                className="header-icons"
+                data-tooltip-id="header-tooltip"
+                data-tooltip-content="Início"
+              />
+            </Link>
             <TbZoomReplace
               className="header-icons"
               data-tooltip-id="header-tooltip"
@@ -50,9 +52,13 @@ export default function Header() {
         </Menu>
         <Tooltip id="header-tooltip" place="bottom" style={customTooltipStyle} />
         <div className="account">
-          <span>LOGIN</span>
+          <Link to="/sign-in">
+            <span>LOGIN</span>
+          </Link>
           <RxDividerVertical />
-          <span>CADASTRO</span>
+          <Link to="/sign-up">
+            <span>CADASTRO</span>
+          </Link>
         </div>
       </HeaderContainer>
     </>
@@ -92,7 +98,7 @@ const HeaderContainer = styled.div`
 
     span {
       cursor: pointer;
-      &:hover{
+      &:hover {
         text-decoration: underline;
       }
     }

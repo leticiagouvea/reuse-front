@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
@@ -8,8 +9,12 @@ import { TbZoomReplace } from "react-icons/tb";
 import { RiChatSmile2Line } from "react-icons/ri";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { RxDividerVertical } from "react-icons/rx";
+import UserContext from "../context/UserContext";
+import ProposalsArea from "./Proposals/ProposalsArea";
 
 export default function Header() {
+  const { showProposals, setShowProposals } = useContext(UserContext);
+
   const customTooltipStyle = {
     backgroundColor: "#d2b03f",
     borderRadius: "10px",
@@ -22,6 +27,7 @@ export default function Header() {
     <>
       <HeaderContainer>
         <img src={Logo} alt="Re-Use" />
+
         <Menu>
           <div>
             <Link to="/">
@@ -42,6 +48,7 @@ export default function Header() {
               className="header-icons"
               data-tooltip-id="header-tooltip"
               data-tooltip-content="Propostas"
+              onClick={() => setShowProposals(!showProposals)}
             />
             <RiChatSmile2Line
               className="header-icons"
@@ -50,8 +57,14 @@ export default function Header() {
             />
           </div>
         </Menu>
-        <Tooltip id="header-tooltip" place="bottom" style={customTooltipStyle} />
-        <div className="account">
+
+        <Tooltip
+          id="header-tooltip"
+          place="bottom"
+          style={customTooltipStyle}
+        />
+
+        <Account>
           <Link to="/sign-in">
             <span>LOGIN</span>
           </Link>
@@ -59,8 +72,14 @@ export default function Header() {
           <Link to="/sign-up">
             <span>CADASTRO</span>
           </Link>
-        </div>
+        </Account>
       </HeaderContainer>
+
+      <ProposalsArea
+        showProposals={showProposals}
+        setShowProposals={setShowProposals}
+        onClick={() => setShowProposals(false)}
+      />
     </>
   );
 }
@@ -83,32 +102,30 @@ const HeaderContainer = styled.div`
     margin-top: 10px;
     object-fit: cover;
   }
+`;
 
-  .account {
-    width: 300px;
-    height: 30px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: #AFD898;
-    font-size: 15px;
+const Account = styled.div`
+  width: 300px;
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #afd898;
+  font-size: 15px;
 
-    span {
-      cursor: pointer;
-      &:hover {
-        text-decoration: underline;
-      }
+  span {
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
     }
   }
 
   @media (max-width: 400px) {
-    .account {
-      font-size: 12px;
-      font-weight: 500;
-    }
+    font-size: 12px;
+    font-weight: 500;
   }
 `;
 

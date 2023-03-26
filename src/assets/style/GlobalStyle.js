@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { colors } from "./constants";
 
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -28,8 +29,7 @@ footer, header, hgroup, menu, nav, section {
 body {
     font-family: 'League Spartan', sans-serif;
     line-height: 1;
-    background-color: #F6F3E4;
-    height: 100%;
+    background-color: ${colors.backgroundColor};
 }
 ol, ul {
     list-style: none;
@@ -54,6 +54,9 @@ a {
 	color: inherit;
 	cursor: pointer;
 }
+strong {
+	font-weight: 500;
+}
 button {
     width: 150px;
     height: 30px;
@@ -64,22 +67,6 @@ button {
     font-size: 15px;
     font-weight: 500;
     box-shadow: 2px 2px 2px rgb(0 0 0 / 30%);
-}
-strong {
-	font-weight: 700;
-}
-.lightgreen {
-    background-color: #afd898;
-}
-&::-webkit-scrollbar {
-    width: 6px;
-}
-&::-webkit-scrollbar-thumb {
-    background: #afd898;
-    border-radius: 6px;
-}
-&::-webkit-scrollbar-thumb:hover {
-    background: #477461;
 }
 form {
     display: flex;
@@ -95,7 +82,7 @@ input {
     padding: 20px;
     border: 0px;
     border-radius: 10px;
-    background-color: #f0eacc;
+    background-color: ${colors.beigeTone};
     font-family: 'League Spartan', sans-serif;
     font-size: 18px;
     font-weight: 500;
@@ -111,6 +98,28 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+&::-webkit-scrollbar {
+    width: 6px;
+}
+&::-webkit-scrollbar-thumb {
+    background: ${colors.lightGreen};
+    border-radius: 6px;
+}
+&::-webkit-scrollbar-thumb:hover {
+    background: ${colors.darkGreen};
+}
+.lightgreen {
+    background-color: ${colors.lightGreen};
+}
+.earthytone {
+    background-color: ${colors.earthyTone};
+}
+.darkgreen {
+    background-color: ${colors.darkGreen};
+}
+.mustardtone {
+    background-color: ${colors.mustardTone};
 }
 `;
 export default GlobalStyle;

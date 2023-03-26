@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { TbArrowsLeftRight } from "react-icons/tb";
 import "hover.css";
+import { colors } from "../../assets/style/constants";
 
 export default function SignUp() {
   return (
@@ -62,7 +63,7 @@ export const AuthContainer = styled.div`
   .icon {
     font-size: 30px;
     margin-bottom: 10px;
-    color: #477461;
+    color: ${colors.darkGreen};
   }
 
   h1 {
@@ -71,7 +72,7 @@ export const AuthContainer = styled.div`
     font-size: 24px;
     font-weight: 500;
     text-align: center;
-    color: #477461;
+    color: ${colors.darkGreen};
   }
 
   h2 {
@@ -79,9 +80,9 @@ export const AuthContainer = styled.div`
     padding: 10px;
     font-size: 18px;
     font-weight: 700;
-    color: #d2912f;
-    border-top: 1px solid #d2912f;
-    border-bottom: 1px solid #d2912f;
+    color: ${colors.earthyTone};
+    border-top: 1px solid ${colors.earthyTone};
+    border-bottom: 1px solid ${colors.earthyTone};
   }
 
   button {

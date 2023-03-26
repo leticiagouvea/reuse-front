@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import ReuseBox from "../../assets/img/ReuseBox.png";
-import Clothes from "../../assets/img/Clothes.png";
 import "animate.css";
 import "hover.css";
+import ReuseBox from "../../assets/img/ReuseBox.png";
+import Clothes from "../../assets/img/Clothes.png";
+import { colors } from "../../assets/style/constants";
 
 export default function HomeElements() {
   return (
@@ -109,7 +110,7 @@ const ElementsContainer = styled.div`
 
 const VerticalLine = styled.div`
   height: 150px;
-  border-left: 2px dashed #477461;
+  border-left: 2px dashed ${colors.darkGreen};
 
   @media (max-width: 925px) {
     display: none;
@@ -119,7 +120,7 @@ const VerticalLine = styled.div`
 const HorizontalLine = styled.div`
   display: none;
   width: 300px;
-  border-bottom: 2px dashed #477461;
+  border-bottom: 2px dashed ${colors.darkGreen};
 
   @media (max-width: 925px) {
     display: initial;

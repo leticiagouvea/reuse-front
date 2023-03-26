@@ -11,17 +11,10 @@ import { MdOutlineNotificationsActive } from "react-icons/md";
 import { RxDividerVertical } from "react-icons/rx";
 import UserContext from "../context/UserContext";
 import ProposalsArea from "./Proposals/ProposalsArea";
+import { colors, customTooltipStyle } from "../assets/style/constants";
 
 export default function Header() {
   const { showProposals, setShowProposals } = useContext(UserContext);
-
-  const customTooltipStyle = {
-    backgroundColor: "#d2b03f",
-    borderRadius: "10px",
-    fontSize: "14px",
-    fontWeight: "bold",
-    padding: "10px",
-  };
 
   return (
     <>
@@ -87,7 +80,7 @@ export default function Header() {
 const HeaderContainer = styled.div`
   width: 100%;
   height: 140px;
-  background-color: #477461;
+  background-color: ${colors.darkGreen};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,7 +106,7 @@ const Account = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
-  color: #afd898;
+  color: ${colors.lightGreen};
   font-size: 15px;
 
   span {
@@ -145,7 +138,7 @@ const Menu = styled.div`
 
   .header-icons {
     font-size: 25px;
-    color: #d2b03f;
+    color: ${colors.mustardTone};
     cursor: pointer;
     transition: all 0.5s;
     &:hover {

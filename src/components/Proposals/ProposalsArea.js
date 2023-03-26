@@ -1,17 +1,21 @@
 import styled from "styled-components";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
+import Proposal from "./Proposal";
+import { colors } from "../../assets/style/constants";
 
 export default function ProposalsArea({ showProposals, setShowProposals }) {
   return (
     <ProposalsContainer showProposals={showProposals}>
-      <div>
+      <div className="show-proposals">
         <h1>PROPOSTAS DE TROCA</h1>
-        <AiOutlineEyeInvisible
-          className="icon"
-          onClick={() => setShowProposals(false)}
-        />
+        <AiOutlineEyeInvisible className="hide-icon" onClick={() => setShowProposals(false)}/>
       </div>
-      <p>Você precisa estar logado para ver suas propostas</p>
+
+      {/* <p>Você precisa estar logado para ver suas propostas</p> */}
+      {/* <p>Nenhuma proposta para você no momento</p> */}
+
+      <Proposal />
+      <Proposal />
     </ProposalsContainer>
   );
 }
@@ -30,9 +34,21 @@ const ProposalsContainer = styled.div`
   transform: ${(props) =>
   props.showProposals ? "translateX(0)" : "translateX(800px)"};
   transition: all 0.5s ease-out;
+  overflow-Y: scroll;
+  &::-webkit-scrollbar-thumb {
+    background: ${colors.darkGreen};
+    border-radius: 6px;
+  }
 
-  div {
+  p {
+    width: 70%;
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  .show-proposals {
     width: 100%;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,20 +59,13 @@ const ProposalsContainer = styled.div`
       border-bottom: 1px solid #000000;
     }
 
-    .icon {
+    .hide-icon {
       font-size: 25px;
       cursor: pointer;
     }
   }
 
-  p {
-    width: 70%;
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: 300;
-  }
-
-  @media (max-width: 500px) {
+  @media (max-width: 400px) {
     width: 100%;
     background-color: #CDCAB1;
   }

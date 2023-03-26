@@ -5,16 +5,9 @@ import "react-tooltip/dist/react-tooltip.css";
 import { TiSocialInstagram } from "react-icons/ti";
 import { MdFacebook } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
+import { colors, customTooltipStyle } from "../assets/style/constants";
 
 export default function Footer() {
-  const customTooltipStyle = {
-    backgroundColor: "#d2b03f",
-    borderRadius: "10px",
-    fontSize: "14px",
-    fontWeight: "bold",
-    padding: "10px",
-  };
-
   return (
     <>
       <FooterContainer>
@@ -48,8 +41,8 @@ export default function Footer() {
 const FooterContainer = styled.div`
   width: 100%;
   height: 150px;
-  background: linear-gradient(180deg, #c0bda1 40%,  #b5b194 100%);
-  color: #477461;
+  background: linear-gradient(180deg, ${colors.grayTone} 40%,  #b5b194 100%);
+  color: ${colors.darkGreen};
   font-family: 'League Spartan', sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -77,7 +70,7 @@ const FooterContainer = styled.div`
 
     .footer-icons {
       font-size: 25px;
-      color: #477461;
+      color: ${colors.darkGreen};
       cursor: pointer;
       transition: all 0.5s;
       &:hover {

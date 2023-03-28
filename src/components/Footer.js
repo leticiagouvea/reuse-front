@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import { TiSocialInstagram } from "react-icons/ti";
-import { MdFacebook } from "react-icons/md";
-import { MdEmail } from "react-icons/md";
+import { MdFacebook, MdEmail } from "react-icons/md";
+import { RiChatSmile2Fill } from "react-icons/ri";
 import { colors, customTooltipStyle } from "../assets/style/constants";
 
 export default function Footer() {
@@ -16,6 +16,11 @@ export default function Footer() {
           <h2>SAIBA MAIS</h2>
         </Link>
         <div>
+          <RiChatSmile2Fill
+            className="footer-icons about-us"
+            data-tooltip-id="footer-tooltip"
+            data-tooltip-content="Sobre nós"
+          />
           <TiSocialInstagram
             className="footer-icons"
             data-tooltip-id="footer-tooltip"
@@ -41,9 +46,9 @@ export default function Footer() {
 const FooterContainer = styled.div`
   width: 100%;
   height: 150px;
-  background: linear-gradient(180deg, ${colors.grayTone} 40%,  #b5b194 100%);
+  background: linear-gradient(180deg, ${colors.grayTone} 40%, #b5b194 100%);
   color: ${colors.darkGreen};
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
   font-size: 16px;
   font-weight: 700;
   display: flex;
@@ -78,9 +83,26 @@ const FooterContainer = styled.div`
         text-shadow: 2px 2px 6px rgb(0 0 0 / 50%);
       }
     }
+    .about-us {
+      display: none;
+    }
+
+    @media (max-width: 500px) {
+      .footer-icons {
+        font-size: 22px;
+      }
+      .about-us {
+        display: initial;
+      }
+    }
   }
 
-  @media (max-width: 650px) {
+  @media (max-width: 500px) {
+    div {
+      width: 160px;
+      margin-right: 10px;
+    }
+
     h2 {
       display: none;
     }

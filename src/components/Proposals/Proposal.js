@@ -19,7 +19,7 @@ export default function Proposal() {
 
   return (
     <>
-      <ProposalCard>
+      <ProposalCard rejected={rejected}>
         <span>
           <strong>letfgouvea</strong> lhe enviou uma proposta de troca:
         </span>
@@ -48,7 +48,7 @@ export default function Proposal() {
           </ProposalAccepted>
         ) : (
           <ProposalRejected>
-            <h3>Você recusou essa proposta</h3>
+            <h3>Você recusou essa troca</h3>
             <CgCloseO className="reject-icon" />
           </ProposalRejected>
         )}
@@ -61,13 +61,15 @@ const ProposalCard = styled.div`
   width: 100%;
   height: 230px;
   padding: 20px;
+  margin-bottom: 20px;
   background-color: ${colors.backgroundColor};
   font-size: 18px;
   font-weight: 300;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  cursor: ${props => props.rejected ? "not-allowed" : "default"};
+  opacity: ${props => props.rejected ? "0.5" : "1.0"};
 
   .products-replace {
     height: 80px;

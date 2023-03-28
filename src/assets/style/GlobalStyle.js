@@ -121,5 +121,8 @@ input[type=number]::-webkit-outer-spin-button {
 .mustardtone {
     background-color: ${colors.mustardTone};
 }
+.graytone {
+    background-color: ${colors.grayTone};
+}
 `;
 export default GlobalStyle;

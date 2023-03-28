@@ -6,6 +6,7 @@ import HomePage from "../src/pages/HomePage";
 import SignUp from "./pages/Auth/SignUp";
 import SignIn from "./pages/Auth/SignIn";
 import OverlayProposals from "./components/Proposals/OverlayProposals";
+import ProductsPage from "./pages/ProductsPage";
 
 export default function App() {
   const [showProposals, setShowProposals] = useState(false);
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/products" element={<ProductsPage />} />
         </Routes>
       </UserContext.Provider>
     </BrowserRouter>

@@ -15,3 +15,11 @@ export const customTooltipStyle = {
   fontWeight: "bold",
   padding: "10px",
 };
+
+export const customTooltipAccountStyle = {
+  backgroundColor: "#d2912f",
+  borderRadius: "10px",
+  fontSize: "14px",
+  fontWeight: "bold",
+  padding: "10px"
+};

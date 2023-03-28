@@ -16,6 +16,8 @@ export default function ProposalsArea({ showProposals, setShowProposals }) {
 
       <Proposal />
       <Proposal />
+      <Proposal />
+      <Proposal />
     </ProposalsContainer>
   );
 }

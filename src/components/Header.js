@@ -4,14 +4,12 @@ import { Link } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import Logo from "../../src/assets/img/Logo.png";
-import { TbHomeEco } from "react-icons/tb";
-import { TbZoomReplace } from "react-icons/tb";
-import { RiChatSmile2Line } from "react-icons/ri";
-import { MdOutlineNotificationsActive } from "react-icons/md";
-import { RxDividerVertical } from "react-icons/rx";
+import { TbHomeEco, TbZoomReplace } from "react-icons/tb";
+import { MdOutlineNotificationsActive, MdOutlineAddToPhotos } from "react-icons/md";
+import { BsFillPersonLinesFill } from "react-icons/bs";
 import UserContext from "../context/UserContext";
 import ProposalsArea from "./Proposals/ProposalsArea";
-import { colors, customTooltipStyle } from "../assets/style/constants";
+import { colors, customTooltipStyle, customTooltipAccountStyle } from "../assets/style/constants";
 
 export default function Header() {
   const { showProposals, setShowProposals } = useContext(UserContext);
@@ -30,42 +28,45 @@ export default function Header() {
                 data-tooltip-content="Início"
               />
             </Link>
-            <TbZoomReplace
-              className="header-icons"
-              data-tooltip-id="header-tooltip"
-              data-tooltip-content="Buscar trocas"
-            />
+            <Link to="/products">
+              <TbZoomReplace
+                className="header-icons"
+                data-tooltip-id="header-tooltip"
+                data-tooltip-content="Buscar trocas"
+              />
+            </Link>
           </div>
           <div>
+            <MdOutlineAddToPhotos
+              className="header-icons"
+              data-tooltip-id="header-tooltip"
+              data-tooltip-content="Adicionar produto"
+            />
             <MdOutlineNotificationsActive
               className="header-icons"
               data-tooltip-id="header-tooltip"
               data-tooltip-content="Propostas"
               onClick={() => setShowProposals(!showProposals)}
             />
-            <RiChatSmile2Line
-              className="header-icons"
-              data-tooltip-id="header-tooltip"
-              data-tooltip-content="Sobre nós"
-            />
           </div>
         </Menu>
+
+        <BsFillPersonLinesFill
+          className="account-icon"
+          data-tooltip-id="account-tooltip"
+          data-tooltip-content="Sua conta"
+        />
 
         <Tooltip
           id="header-tooltip"
           place="bottom"
           style={customTooltipStyle}
         />
-
-        <Account>
-          <Link to="/sign-in">
-            <span>LOGIN</span>
-          </Link>
-          <RxDividerVertical />
-          <Link to="/sign-up">
-            <span>CADASTRO</span>
-          </Link>
-        </Account>
+        <Tooltip
+          id="account-tooltip"
+          place="left"
+          style={customTooltipAccountStyle}
+        />
       </HeaderContainer>
 
       <ProposalsArea
@@ -95,30 +96,14 @@ const HeaderContainer = styled.div`
     margin-top: 10px;
     object-fit: cover;
   }
-`;
 
-const Account = styled.div`
-  width: 300px;
-  height: 30px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: ${colors.lightGreen};
-  font-size: 15px;
-
-  span {
+  .account-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: ${colors.lightGreen};
+    font-size: 24px;
     cursor: pointer;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  @media (max-width: 400px) {
-    font-size: 12px;
-    font-weight: 500;
   }
 `;
 
@@ -131,9 +116,9 @@ const Menu = styled.div`
   bottom: 20px;
 
   div {
+    width: 70px;
     display: flex;
     justify-content: space-between;
-    width: 70px;
   }
 
   .header-icons {
@@ -144,6 +129,16 @@ const Menu = styled.div`
     &:hover {
       color: #000000;
       text-shadow: 2px 2px 6px rgb(0 0 0 / 50%);
+    }
+  }
+
+  @media (max-width: 400px) {
+    div {
+      width: 60px;
+    }
+
+    .header-icons {
+      font-size: 22px;
     }
   }
 `;

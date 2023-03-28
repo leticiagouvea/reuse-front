@@ -6,13 +6,15 @@ import "react-tooltip/dist/react-tooltip.css";
 import Logo from "../../src/assets/img/Logo.png";
 import { TbHomeEco, TbZoomReplace } from "react-icons/tb";
 import { MdOutlineNotificationsActive, MdOutlineAddToPhotos } from "react-icons/md";
-import { BsFillPersonLinesFill } from "react-icons/bs";
+import { BsPersonLinesFill } from "react-icons/bs";
 import UserContext from "../context/UserContext";
 import ProposalsArea from "./Proposals/ProposalsArea";
 import { colors, customTooltipStyle, customTooltipAccountStyle } from "../assets/style/constants";
+import Account from "./Account";
 
 export default function Header() {
   const { showProposals, setShowProposals } = useContext(UserContext);
+  const { showAccount, setShowAccount } = useContext(UserContext);
 
   return (
     <>
@@ -51,10 +53,11 @@ export default function Header() {
           </div>
         </Menu>
 
-        <BsFillPersonLinesFill
+        <BsPersonLinesFill
           className="account-icon"
           data-tooltip-id="account-tooltip"
           data-tooltip-content="Sua conta"
+          onClick={() => setShowAccount(!showAccount)}
         />
 
         <Tooltip
@@ -68,6 +71,8 @@ export default function Header() {
           style={customTooltipAccountStyle}
         />
       </HeaderContainer>
+
+      <Account showAccount={showAccount} />
 
       <ProposalsArea
         showProposals={showProposals}
@@ -88,7 +93,7 @@ const HeaderContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   box-shadow: 2px 2px 6px rgb(0 0 0 / 50%);
 
   img {
@@ -104,6 +109,12 @@ const HeaderContainer = styled.div`
     color: ${colors.lightGreen};
     font-size: 24px;
     cursor: pointer;
+  }
+
+  @media (max-width: 400px) {
+    .account-icon {
+      font-size: 22px;
+    }
   }
 `;
 
@@ -136,7 +147,6 @@ const Menu = styled.div`
     div {
       width: 60px;
     }
-
     .header-icons {
       font-size: 22px;
     }

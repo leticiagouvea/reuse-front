@@ -10,12 +10,13 @@ import ProductsPage from "./pages/ProductsPage";
 
 export default function App() {
   const [showProposals, setShowProposals] = useState(false);
+  const [showAccount, setShowAccount] = useState(true);
 
   return (
     <BrowserRouter>
       <GlobalStyle />
       <OverlayProposals showProposals={showProposals} setShowProposals={setShowProposals} />
-      <UserContext.Provider value={{ showProposals, setShowProposals }}>
+      <UserContext.Provider value={{ showProposals, setShowProposals, showAccount, setShowAccount }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/sign-up" element={<SignUp />} />

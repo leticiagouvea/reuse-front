@@ -33,8 +33,7 @@ const ProposalsContainer = styled.div`
   right: 0;
   z-index: 3;
   font-size: 16px;
-  transform: ${(props) =>
-  props.showProposals ? "translateX(0)" : "translateX(800px)"};
+  transform: ${(props) => props.showProposals ? "translateX(0)" : "translateX(800px)"};
   transition: all 0.5s ease-out;
   overflow-Y: scroll;
   &::-webkit-scrollbar-thumb {

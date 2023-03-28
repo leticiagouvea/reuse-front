@@ -21,28 +21,23 @@ export default function SignUp() {
             required
           />
           <input
-            placeholder="Senha"
-            type="password"
-            required
-          />
-          <input
-            placeholder="Nome completo"
-            type="text"
-            required
-          />
-          <input
-            placeholder="CPF"
-            type="number"
-            required
-          />
-          <input
-            placeholder="Endereço completo"
+            placeholder="Cidade e Estado"
             type="text"
             required
           />
           <input
             placeholder="Celular"
             type="celphone"
+            required
+          />
+          <input
+            placeholder="Senha"
+            type="password"
+            required
+          />
+          <input
+            placeholder="Confirme sua senha"
+            type="password"
             required
           />
 

@@ -67,6 +67,9 @@ button {
     font-size: 15px;
     font-weight: 500;
     box-shadow: 2px 2px 2px rgb(0 0 0 / 30%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 form {
     display: flex;

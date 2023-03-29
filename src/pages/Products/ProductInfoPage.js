@@ -1,12 +1,17 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import "hover.css";
 import { colors } from "../../assets/style/constants";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import { MdPersonPin, MdLocationOn } from "react-icons/md";
 import { TiInfo, TiArrowRepeat } from "react-icons/ti";
-import "hover.css";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import SelectReplace from "../../components/Replace/SelectReplace";
+import UserContext from "../../context/UserContext";
 
 export default function ProductInfoPage() {
+  const { showWindowReplace, setShowWindowReplace } = useContext(UserContext);
+
   return (
     <>
       <Header />
@@ -31,15 +36,23 @@ export default function ProductInfoPage() {
               <TiInfo className="icon" />
               <h2><strong>Descrição do produto:</strong></h2>
             </div>
-            <p>Jaqueta Jeans da Renner. Tamanho P. Condição: 9/10. Foi pouco usada. Gosto muito dessa jaqueta, mas não cabe mais em mim.</p>
+            
+            <p>
+              Jaqueta Jeans da Renner. Tamanho P. Condição: 9/10. Foi pouco
+              usada. Gosto muito dessa jaqueta, mas não cabe mais em mim.
+            </p>
           </div>
 
-          <button className="lightgreen hvr-icon-spin">
+          <button
+            className="lightgreen hvr-icon-spin"
+            onClick={() => setShowWindowReplace(!showWindowReplace)}
+          >
             PROPOR TROCA
             <TiArrowRepeat className="replace-icon hvr-icon" />
           </button>
         </Details>
       </ContainerProduct>
+      <SelectReplace showWindowReplace={showWindowReplace} />
       <Footer />
     </>
   );
@@ -104,7 +117,7 @@ const Details = styled.div`
   color: #333333;
   font-weight: 300;
   font-size: 16px;
-  
+
   .icon {
     font-size: 22px;
     margin-right: 10px;
@@ -140,7 +153,7 @@ const Details = styled.div`
     font-size: 14px;
     box-shadow: 2px 2px 2px rgb(0 0 0 / 30%);
     transition: all 0.3s ease-out;
-    
+
     .replace-icon {
       font-size: 20px;
       margin-left: 5px;
@@ -152,9 +165,9 @@ const Details = styled.div`
     justify-content: center;
 
     .description {
-    p {
-      width: 100%;
+      p {
+        width: 100%;
+      }
     }
-  }
   }
 `;

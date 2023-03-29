@@ -1,18 +1,21 @@
 import styled from "styled-components";
 
-export default function OverlayReplace() {
+export default function OverlayReplace({ showWindowReplace, setShowWindowReplace }) {
   return (
-    <OverlayWindow />
+    <OverlayWindowReplace 
+      showWindowReplace={showWindowReplace} 
+      onClick={() => setShowWindowReplace(false)} 
+    />
   );
 }
 
-const OverlayWindow = styled.div`
+const OverlayWindowReplace = styled.div`
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: 6;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(71, 116, 97, 0.8);
-  /* display: ${props => props.showWindow ? "initial" : "none"}; */
+  background-color: rgba(71, 116, 97, 0.5);
+  display: ${props => props.showWindowReplace ? "initial" : "none"};
 `;

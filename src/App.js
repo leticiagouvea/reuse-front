@@ -2,11 +2,13 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyle from "../src/assets/style/GlobalStyle";
 import UserContext from "./context/UserContext";
-import HomePage from "../src/pages/HomePage";
+import Home from "./pages/Home";
 import SignUp from "./pages/Auth/SignUp";
 import SignIn from "./pages/Auth/SignIn";
-import ProductsPage from "./pages/Products/ProductsPage";
-import ProductInfoPage from "./pages/Products/ProductInfoPage";
+import Products from "./pages/Products/Products";
+import ProductInfo from "./pages/Products/ProductInfo";
+import AddProduct from "./pages/Products/AddProduct";
+/* import Replace from "./pages/Replace"; */
 import OverlayProposals from "./components/Proposals/OverlayProposals";
 import OverlayReplace from "./components/Replace/OverlayReplace";
 
@@ -31,11 +33,13 @@ export default function App() {
         }}
       >
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Home />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/products/:id" element={<ProductInfoPage />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductInfo />} />
+          <Route path="/add-product" element={<AddProduct />} />
+          {/* <Route path="/replace" element={<Replace />} /> */}
         </Routes>
       </UserContext.Provider>
     </BrowserRouter>

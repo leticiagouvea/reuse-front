@@ -77,7 +77,7 @@ form {
     align-items: center;
     margin: 10px 0px 40px 0px;
 }
-input {
+input, textarea {
     width: 100%;
     min-width: 300px;
     height: 50px;
@@ -90,11 +90,11 @@ input {
     font-size: 18px;
     font-weight: 500;
 }
-input::placeholder {
+input::placeholder, textarea::placeholder {
     color: #333333;
     font-size: 18px;
 }
-input:focus {
+input:focus, textarea:focus {
     outline: inherit;
 }
 input[type=number]::-webkit-inner-spin-button, 
@@ -102,8 +102,13 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+textarea {
+    height: 100px;
+    resize: none;
+}
 &::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
 }
 &::-webkit-scrollbar-thumb {
     background: ${colors.lightGreen};

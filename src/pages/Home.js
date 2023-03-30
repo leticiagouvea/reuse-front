@@ -6,7 +6,7 @@ import HomeElements from "../components/Home/HomeElements";
 import PurposeContainer from "../components/Home/PurposeContainer";
 import Footer from "../components/Footer";
 
-export default function HomePage() {
+export default function Home() {
   const slides = [Banner1, Banner2];
 
   return (

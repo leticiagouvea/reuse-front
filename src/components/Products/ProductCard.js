@@ -3,7 +3,7 @@ import { colors } from "../../assets/style/constants";
 import { MdPersonPin } from "react-icons/md";
 import "hover.css";
 
-export default function Product() {
+export default function ProductCard() {
   return (
     <ProductContainer>
       <div className="info-product">

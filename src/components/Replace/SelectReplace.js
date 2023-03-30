@@ -1,7 +1,10 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { colors } from "../../assets/style/constants";
 
 export default function SelectReplace({ showWindowReplace }) {
+  const [selected, setSelected] = useState(false);
+
   return (
     <CentralizeWindow>
       <WindowContainer showWindowReplace={showWindowReplace}>
@@ -10,7 +13,7 @@ export default function SelectReplace({ showWindowReplace }) {
 
         <ProductReplace>
           <h2>Selecione o produto a ser trocado:</h2>
-          <SelectProduct>
+          <SelectProduct selected={selected} onClick={() => setSelected(!selected)}>
             <div className="img-product">
               <img src="https://www.equus.com.br/images/thumbs/0009673_jaqueta-jeans-com-barra-desfiada-e-desgastes_600.jpeg" alt="" />
             </div>
@@ -79,10 +82,6 @@ const SelectProduct = styled.div`
   align-items: center;
   overflow-x: scroll;
 
-  &::-webkit-scrollbar {
-    height: 6px;
-  }
-
   .img-product {
     width: 80px;
     margin-right: 30px;
@@ -92,7 +91,7 @@ const SelectProduct = styled.div`
       height: 90px;
       object-fit: cover;
       border-radius: 50%;
-      border: 3px solid ${colors.mustardTone};
+      border: ${(props) => (props.selected ? `3px solid ${colors.darkGreen}` : `3px solid ${colors.mustardTone}` )};
       box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
       cursor: pointer;
     }

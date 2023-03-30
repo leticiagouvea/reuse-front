@@ -39,11 +39,13 @@ export default function Header() {
             </Link>
           </div>
           <div>
-            <MdOutlineAddToPhotos
-              className="header-icons"
-              data-tooltip-id="header-tooltip"
-              data-tooltip-content="Adicionar produto"
-            />
+            <Link to="/add-product">
+              <MdOutlineAddToPhotos
+                className="header-icons"
+                data-tooltip-id="header-tooltip"
+                data-tooltip-content="Adicionar produto"
+              />
+            </Link>
             <MdOutlineNotificationsActive
               className="header-icons"
               data-tooltip-id="header-tooltip"

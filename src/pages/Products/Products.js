@@ -1,22 +1,22 @@
 import styled from "styled-components";
 import { colors } from "../../assets/style/constants";
 import Header from "../../components/Header";
-import Product from "../../components/Products/Product";
+import ProductCard from "../../components/Products/ProductCard";
 
-export default function ProductPage() {
+export default function Product() {
   return (
     <ContainerPage>
       <Header />
       <Title>ENCONTRAR TROCAS</Title>
       <ProductsContainer>
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
       </ProductsContainer>
     </ContainerPage>
   );

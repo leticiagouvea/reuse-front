@@ -9,7 +9,7 @@ import Footer from "../../components/Footer";
 import SelectReplace from "../../components/Replace/SelectReplace";
 import UserContext from "../../context/UserContext";
 
-export default function ProductInfoPage() {
+export default function ProductInfo() {
   const { showWindowReplace, setShowWindowReplace } = useContext(UserContext);
 
   return (

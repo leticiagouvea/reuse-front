@@ -8,7 +8,7 @@ import SignIn from "./pages/Auth/SignIn";
 import Products from "./pages/Products/Products";
 import ProductInfo from "./pages/Products/ProductInfo";
 import AddProduct from "./pages/Products/AddProduct";
-/* import Replace from "./pages/Replace"; */
+import Replace from "./pages/Replace";
 import OverlayProposals from "./components/Proposals/OverlayProposals";
 import OverlayReplace from "./components/Replace/OverlayReplace";
 
@@ -39,7 +39,7 @@ export default function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductInfo />} />
           <Route path="/add-product" element={<AddProduct />} />
-          {/* <Route path="/replace" element={<Replace />} /> */}
+          <Route path="/replace" element={<Replace />} />
         </Routes>
       </UserContext.Provider>
     </BrowserRouter>

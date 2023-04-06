@@ -28,7 +28,11 @@ export default function ProductInfo() {
 
           <div className="infos">
             <MdLocationOn className="icon" />
-            <h2>Rio de Janeiro - RJ</h2>
+            <div className="location">
+              <h2>Rio de Janeiro </h2>
+              <h2 className="separator">-</h2>
+              <h2>RJ</h2>
+            </div>
           </div>
 
           <div className="description">
@@ -128,6 +132,14 @@ const Details = styled.div`
     margin-bottom: 5px;
     display: flex;
     align-items: center;
+
+    .location {
+      display: flex;
+
+      .separator {
+        margin: 0px 3px;
+      }
+    }
   }
 
   .description {

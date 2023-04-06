@@ -16,15 +16,27 @@ export default function SignUp() {
 
         <form>
           <input
+            placeholder="E-mail"
+            type="email"
+            required
+          />
+          <input
             placeholder="Nome de usuário"
             type="text"
             required
           />
-          <input
-            placeholder="Cidade e Estado"
-            type="text"
-            required
-          />
+          <div className="location">
+            <input className="city"
+              placeholder="Cidade"
+              type="text"
+              required
+            />
+            <input className="state"
+              placeholder="Estado"
+              type="text"
+              required
+            />
+          </div>
           <input
             placeholder="Celular"
             type="celphone"
@@ -82,5 +94,20 @@ export const AuthContainer = styled.div`
 
   button {
     margin: 10px 0px 50px 0px;
+  }
+
+  .location {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    
+    .city {
+      min-width: 180px;
+      margin-right: 10px;
+    }
+
+    .state {
+      min-width: 20px;
+    }
   }
 `;

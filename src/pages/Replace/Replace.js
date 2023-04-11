@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import "hover.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import { colors } from "../assets/style/constants";
-import ProductsReplace from "../components/Replace/ProductsReplace";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import { colors } from "../../assets/style/constants";
+import ProductsReplace from "../../components/Replace/ProductsReplace";
 import { TbBrandWhatsapp } from "react-icons/tb";
 
-export default function Replace() {
+export function Replace() {
   return (
     <>
       <Header />

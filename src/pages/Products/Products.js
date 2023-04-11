@@ -3,7 +3,7 @@ import { colors } from "../../assets/style/constants";
 import Header from "../../components/Header";
 import ProductCard from "../../components/Products/ProductCard";
 
-export default function Product() {
+export function Products() {
   return (
     <ContainerPage>
       <Header />

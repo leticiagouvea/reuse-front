@@ -1,44 +1,67 @@
+import { useState } from "react";
 import styled from "styled-components";
+import Dropzone from "react-dropzone";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { colors } from "../../assets/style/constants";
 
-export default function AddProduct() {
+export function AddProduct() {
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const onDrop = (acceptedFiles) => {
+    const file = acceptedFiles[0];
+    setSelectedFile(file);
+  };
+
   return (
     <>
       <Header />
-        <AddProductContainer>
-          <h1>ADICIONE UM PRODUTO</h1>
+      <AddProductContainer>
+        <h1>ADICIONAR PRODUTO</h1>
 
-          <form>
-            <label>Escolha um nome para o produto:</label>
-            <input
-              placeholder="Insira aqui o nome do produto"
-              type="text"
-              required
-            />
-            <label>Descrição do produto:</label>
-            <textarea
-              placeholder="Adicione informações importantes, como: detalhes de tamanho, modelo, marca ou loja, e condições da peça..."
-              type="text"
-              required
-            />
-            <button className="lightgreen hvr-float-shadow"> PUBLICAR </button>
+        <form>
+          <label>Insira uma imagem:</label>
+          <Dropzone onDrop={onDrop}>
+            {({ getRootProps, getInputProps }) => (
+              <div className="dropzone-box" {...getRootProps()}>
+                <input {...getInputProps()} />
+                {selectedFile ? (
+                  <img src={URL.createObjectURL(selectedFile)} alt="product" />
+                ) : (
+                  <p>Clique aqui para selecionar a imagem</p>
+                )}
+              </div>
+            )}
+          </Dropzone>
+          <label>Escolha um nome para o produto:</label>
+          <input
+            placeholder="Digite aqui o nome do produto"
+            type="text"
+            required
+          />
+          <label>Descrição do produto:</label>
+          <textarea
+            placeholder="Adicione informações importantes, como: detalhes de tamanho, modelo, marca ou loja, e condições da peça..."
+            type="text"
+            required
+          />
+          <button className="lightgreen hvr-float-shadow"> PUBLICAR </button>
         </form>
-        </AddProductContainer>
+      </AddProductContainer>
       <Footer />
     </>
   );
 }
 
 const AddProductContainer = styled.div`
-  margin: 180px auto 100px auto;
+  width: 300px;
+  margin: 180px auto 10px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   h1 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     padding: 10px;
     font-size: 18px;
     font-weight: 700;
@@ -47,13 +70,37 @@ const AddProductContainer = styled.div`
     border-bottom: 1px solid ${colors.earthyTone};
   }
 
+  .dropzone-box {
+    width: 300px;
+    height: 70px;
+    padding: 20px;
+    margin: 5px 0px 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed ${colors.earthyTone};
+    border-radius: 10px;
+    background-color: ${colors.beigeTone};
+    color: #333333;
+    text-align: center;
+    font-weight: 300;
+    cursor: pointer;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
   label {
     width: 300px;
     font-size: 18px;
     margin-bottom: 8px;
   }
 
-  input::placeholder, 
+  input::placeholder,
   textarea::placeholder {
     color: #333333;
     font-size: 16px;

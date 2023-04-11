@@ -1,20 +1,22 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import Logo from "../../src/assets/img/Logo.png";
 import { TbHomeEco, TbZoomReplace } from "react-icons/tb";
 import { MdOutlineNotificationsActive, MdOutlineAddToPhotos } from "react-icons/md";
 import { BsPersonLinesFill } from "react-icons/bs";
-import UserContext from "../context/UserContext";
-import ProposalsArea from "./Proposals/ProposalsArea";
 import { colors, customTooltipStyle, customTooltipAccountStyle } from "../assets/style/constants";
+import Logo from "../../src/assets/img/Logo.png";
+import UserContext from "../context/UserContext";
 import Account from "./Account";
+import ProposalsArea from "./Proposals/ProposalsArea";
 
 export default function Header() {
   const { showProposals, setShowProposals } = useContext(UserContext);
   const { showAccount, setShowAccount } = useContext(UserContext);
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -23,29 +25,26 @@ export default function Header() {
 
         <Menu>
           <div>
-            <Link to="/">
-              <TbHomeEco
-                className="header-icons"
-                data-tooltip-id="header-tooltip"
-                data-tooltip-content="Início"
-              />
-            </Link>
-            <Link to="/products">
-              <TbZoomReplace
-                className="header-icons"
-                data-tooltip-id="header-tooltip"
-                data-tooltip-content="Buscar trocas"
-              />
-            </Link>
+            <TbHomeEco
+              className="header-icons"
+              data-tooltip-id="header-tooltip"
+              data-tooltip-content="Início"
+              onClick={() => navigate("/")}
+            />
+            <TbZoomReplace
+              className="header-icons"
+              data-tooltip-id="header-tooltip"
+              data-tooltip-content="Buscar trocas"
+              onClick={() => navigate("/products")}
+            />
           </div>
           <div>
-            <Link to="/add-product">
-              <MdOutlineAddToPhotos
-                className="header-icons"
-                data-tooltip-id="header-tooltip"
-                data-tooltip-content="Adicionar produto"
-              />
-            </Link>
+            <MdOutlineAddToPhotos
+              className="header-icons"
+              data-tooltip-id="header-tooltip"
+              data-tooltip-content="Adicionar produto"
+              onClick={() => navigate("/add-product")}
+            />
             <MdOutlineNotificationsActive
               className="header-icons"
               data-tooltip-id="header-tooltip"

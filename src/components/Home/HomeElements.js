@@ -1,15 +1,20 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import "animate.css";
 import "hover.css";
+import { RxDoubleArrowRight } from "react-icons/rx";
+import { colors } from "../../assets/style/constants";
 import ReuseBox from "../../assets/img/ReuseBox.png";
 import Clothes from "../../assets/img/Clothes.png";
-import { colors } from "../../assets/style/constants";
 
 export default function HomeElements() {
+  const navigate = useNavigate();
+
   return (
     <ElementsContainer>
       <div className="left animate__animated animate__bounce">
         <img src={ReuseBox} alt="Re-Use" />
+        
         <h1>
           Circulando roupas, <br />
           ressignificando histórias.
@@ -25,9 +30,17 @@ export default function HomeElements() {
           <h2>
             Não compre, troque. <br />
             Não descarte, troque. <br />
-            Faça da segunda mão, <br />a sua primeira opção.
+            Faça da segunda mão, <br />
+            a sua primeira opção.
           </h2>
-          <button className="lightgreen hvr-pulse-shrink">Comece aqui »</button>
+
+          <button
+            className="lightgreen hvr-pulse-shrink"
+            onClick={() => navigate("/products")}
+          >
+            Ir às trocas
+            <RxDoubleArrowRight className="arrow-icon" />
+          </button>
         </div>
       </div>
     </ElementsContainer>
@@ -40,7 +53,8 @@ const ElementsContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
 
-  .left, .right {
+  .left,
+  .right {
     width: 40%;
     margin: 5px 0px;
     display: flex;
@@ -50,7 +64,7 @@ const ElementsContainer = styled.div`
   .left {
     justify-content: flex-end;
   }
-  
+
   .right {
     justify-content: flex-start;
   }
@@ -72,6 +86,16 @@ const ElementsContainer = styled.div`
     line-height: 1.3;
     font-weight: 500;
     margin-bottom: 14px;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+  }
+
+  .arrow-icon {
+    font-size: 12px;
+    margin-left: 5px;
   }
 
   @media (max-width: 925px) {

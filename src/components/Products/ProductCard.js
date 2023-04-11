@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { colors } from "../../assets/style/constants";
+import { colors } from "../../assets/styles/constants";
 import { MdPersonPin } from "react-icons/md";
 import "hover.css";
 
-export default function ProductCard() {
+export function ProductCard() {
   return (
     <ProductContainer>
       <div className="info-product">

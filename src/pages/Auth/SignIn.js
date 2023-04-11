@@ -4,9 +4,8 @@ import { toast } from "react-toastify";
 import "hover.css";
 import { TbArrowsLeftRight } from "react-icons/tb";
 import { postSignIn } from "../../services";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import { AuthContainer } from "./style";
+import { Header, Footer } from "../../components";
 
 export function SignIn() {
   const [email, setEmail] = useState("");

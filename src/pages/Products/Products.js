@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { colors } from "../../assets/style/constants";
-import Header from "../../components/Header";
-import ProductCard from "../../components/Products/ProductCard";
+import { colors } from "../../assets/styles/constants";
+import { Header, ProductCard } from "../../components";
 
 export function Products() {
   return (

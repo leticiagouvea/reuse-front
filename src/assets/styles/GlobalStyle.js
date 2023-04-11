@@ -77,7 +77,8 @@ form {
     align-items: center;
     margin: 10px 0px 40px 0px;
 }
-input, textarea {
+input, 
+textarea {
     width: 100%;
     min-width: 300px;
     height: 50px;
@@ -90,11 +91,13 @@ input, textarea {
     font-size: 18px;
     font-weight: 500;
 }
-input::placeholder, textarea::placeholder {
+input::placeholder, 
+textarea::placeholder {
     color: #333333;
     font-size: 18px;
 }
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: inherit;
 }
 input[type=number]::-webkit-inner-spin-button, 

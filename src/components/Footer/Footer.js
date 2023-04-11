@@ -5,9 +5,9 @@ import "react-tooltip/dist/react-tooltip.css";
 import { TiSocialInstagram } from "react-icons/ti";
 import { MdFacebook, MdEmail } from "react-icons/md";
 import { RiChatSmile2Fill } from "react-icons/ri";
-import { colors, customTooltipStyle } from "../assets/style/constants";
+import { colors, customTooltipStyle } from "../../assets/styles/constants";
 
-export default function Footer() {
+export function Footer() {
   return (
     <>
       <FooterContainer>

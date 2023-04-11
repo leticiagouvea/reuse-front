@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function OverlayReplace({ showWindowReplace, setShowWindowReplace }) {
+export function OverlayReplace({ showWindowReplace, setShowWindowReplace }) {
   return (
     <OverlayWindowReplace 
       showWindowReplace={showWindowReplace} 

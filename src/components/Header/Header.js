@@ -6,13 +6,12 @@ import "react-tooltip/dist/react-tooltip.css";
 import { TbHomeEco, TbZoomReplace } from "react-icons/tb";
 import { MdOutlineNotificationsActive, MdOutlineAddToPhotos } from "react-icons/md";
 import { BsPersonLinesFill } from "react-icons/bs";
-import { colors, customTooltipStyle, customTooltipAccountStyle } from "../assets/style/constants";
-import Logo from "../../src/assets/img/Logo.png";
-import UserContext from "../context/UserContext";
-import Account from "./Account";
-import ProposalsArea from "./Proposals/ProposalsArea";
+import { colors, customTooltipStyle, customTooltipAccountStyle } from "../../assets/styles/constants";
+import Logo from "../../assets/images/Logo.png";
+import UserContext from "../../context/UserContext";
+import { Account, ProposalsArea } from "../../components";
 
-export default function Header() {
+export function Header() {
   const { showProposals, setShowProposals } = useContext(UserContext);
   const { showAccount, setShowAccount } = useContext(UserContext);
 

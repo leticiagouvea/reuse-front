@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { IoIosLeaf } from "react-icons/io";
 import { IoLogOut } from "react-icons/io5";
 import { RiLoginCircleFill, RiAccountCircleFill } from "react-icons/ri";
-import { colors } from "../assets/style/constants";
+import { colors } from "../../assets/styles/constants";
 import { toast } from "react-toastify";
 
-export default function Account({ showAccount }) {
+export function Account({ showAccount }) {
   const token = JSON.parse(localStorage.getItem("token"));
 
   const navigate = useNavigate();

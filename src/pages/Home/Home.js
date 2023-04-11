@@ -1,10 +1,12 @@
-import Header from "../../components/Header";
-import HomeSlider from "../../components/Home/HomeSlider";
-import Banner1 from "../../assets/img/Banner1.png";
-import Banner2 from "../../assets/img/Banner2.png";
-import HomeElements from "../../components/Home/HomeElements";
-import PurposeContainer from "../../components/Home/PurposeContainer";
-import Footer from "../../components/Footer";
+import Banner1 from "../../assets/images/Banner1.png";
+import Banner2 from "../../assets/images/Banner2.png";
+import {
+  Header,
+  HomeSlider,
+  HomeElements,
+  PurposeContainer,
+  Footer
+} from "../../components";
 
 export function Home() {
   const slides = [Banner1, Banner2];

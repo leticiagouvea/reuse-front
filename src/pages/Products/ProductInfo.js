@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import "hover.css";
-import { colors } from "../../assets/style/constants";
+import { colors } from "../../assets/styles/constants";
 import { MdPersonPin, MdLocationOn } from "react-icons/md";
 import { TiInfo, TiArrowRepeat } from "react-icons/ti";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import SelectReplace from "../../components/Replace/SelectReplace";
 import UserContext from "../../context/UserContext";
+import {
+  Header,
+  Footer,
+  SelectReplace
+} from "../../components";
 
 export function ProductInfo() {
   const { showWindowReplace, setShowWindowReplace } = useContext(UserContext);

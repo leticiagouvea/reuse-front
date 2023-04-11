@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../assets/style/constants";
+import { colors } from "../../assets/styles/constants";
 
 export const AuthContainer = styled.div`
   margin: 180px 0px 10px 0px;

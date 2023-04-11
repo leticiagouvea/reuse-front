@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-export default function HomeSlider({ slides }) {
+export function HomeSlider({ slides }) {
   const [index, setIndex] = useState(0);
   const img = slides[index];
   const isFirstSlide = index === 0;

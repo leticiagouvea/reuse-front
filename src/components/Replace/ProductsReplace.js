@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { colors } from "../../assets/style/constants";
+import { colors } from "../../assets/styles/constants";
 import { IoIosSend } from "react-icons/io";
 import { MdPersonPin, MdLocationOn } from "react-icons/md";
 import { TiArrowSync } from "react-icons/ti";
 
-export default function ProductsReplace() {
+export function ProductsReplace() {
   return (
     <ProductsInfo>
       <Product>

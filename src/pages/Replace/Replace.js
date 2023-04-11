@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import "hover.css";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import { colors } from "../../assets/style/constants";
-import ProductsReplace from "../../components/Replace/ProductsReplace";
+import { colors } from "../../assets/styles/constants";
 import { TbBrandWhatsapp } from "react-icons/tb";
+import {
+  Header,
+  Footer,
+  ProductsReplace
+} from "../../components";
 
 export function Replace() {
   return (

@@ -2,10 +2,9 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import GlobalStyle from "../src/assets/style/GlobalStyle";
+import GlobalStyle from "../src/assets/styles/GlobalStyle";
 import UserContext from "./context/UserContext";
-import OverlayProposals from "./components/Proposals/OverlayProposals";
-import OverlayReplace from "./components/Replace/OverlayReplace";
+import { OverlayProposals, OverlayReplace } from "./components";
 import {
   Home,
   SignUp,

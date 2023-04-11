@@ -1,9 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Dropzone from "react-dropzone";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import { colors } from "../../assets/style/constants";
+import { colors } from "../../assets/styles/constants";
+import { Header, Footer } from "../../components";
 
 export function AddProduct() {
   const [selectedFile, setSelectedFile] = useState(null);

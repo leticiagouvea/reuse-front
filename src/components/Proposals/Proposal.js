@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { TbArrowsLeftRight } from "react-icons/tb";
-import { colors } from "../../assets/style/constants";
+import { colors } from "../../assets/styles/constants";
 import { BiCheck } from "react-icons/bi";
 import { CgCloseO } from "react-icons/cg";
 

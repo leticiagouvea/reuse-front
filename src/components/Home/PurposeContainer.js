@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import REs from "../../assets/img/REs.png";
-import { colors } from "../../assets/style/constants";
+import REs from "../../assets/images/REs.png";
+import { colors } from "../../assets/styles/constants";
 
-export default function PurposeContainer() {
+export function PurposeContainer() {
   return (
     <InfoContainer>
       <h1>Nosso intuito</h1>

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import Proposal from "./Proposal";
-import { colors } from "../../assets/style/constants";
+import { colors } from "../../assets/styles/constants";
 
-export default function ProposalsArea({ showProposals, setShowProposals }) {
+export function ProposalsArea({ showProposals, setShowProposals }) {
   return (
     <ProposalsContainer showProposals={showProposals}>
       <div className="show-proposals">

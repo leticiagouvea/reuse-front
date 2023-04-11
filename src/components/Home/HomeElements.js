@@ -3,11 +3,11 @@ import styled from "styled-components";
 import "animate.css";
 import "hover.css";
 import { RxDoubleArrowRight } from "react-icons/rx";
-import { colors } from "../../assets/style/constants";
-import ReuseBox from "../../assets/img/ReuseBox.png";
-import Clothes from "../../assets/img/Clothes.png";
+import { colors } from "../../assets/styles/constants";
+import ReuseBox from "../../assets/images/ReuseBox.png";
+import Clothes from "../../assets/images/Clothes.png";
 
-export default function HomeElements() {
+export function HomeElements() {
   const navigate = useNavigate();
 
   return (

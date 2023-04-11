@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { colors } from "../../assets/style/constants";
+import { colors } from "../../assets/styles/constants";
 
-export default function SelectReplace({ showWindowReplace }) {
+export function SelectReplace({ showWindowReplace }) {
   const [selected, setSelected] = useState(false);
 
   return (

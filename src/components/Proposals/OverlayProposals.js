@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function OverlayProposals({ showProposals, setShowProposals }) {
+export function OverlayProposals({ showProposals, setShowProposals }) {
   return (
     <Overlay showProposals={showProposals} onClick={() => setShowProposals(false)} />
   );

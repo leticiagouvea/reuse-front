@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 
 export function Account({ showAccount }) {
   const token = JSON.parse(localStorage.getItem("token"));
+  const username = JSON.parse(localStorage.getItem("username"));
 
   const navigate = useNavigate();
 
@@ -29,7 +30,7 @@ export function Account({ showAccount }) {
         <Access>
           <div className="account-options">
             <RiAccountCircleFill className="icon" />
-            <p>Seu perfil</p>
+            <p>Olá, {username}!</p>
           </div>
 
           <div className="account-options">

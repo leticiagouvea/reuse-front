@@ -22,9 +22,10 @@ export function SignIn() {
     };
 
     try {
-      const user = await postSignIn(body);
+      const data = await postSignIn(body);
+      localStorage.setItem("token", JSON.stringify(data.token));
+      localStorage.setItem("username", JSON.stringify(data.user.username));
 
-      localStorage.setItem("token", JSON.stringify(user.token));
       resetForm();
       toast.success("Login feito com sucesso! Seja bem-vindo.");
       navigate("/");

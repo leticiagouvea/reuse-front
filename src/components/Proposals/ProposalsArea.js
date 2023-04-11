@@ -1,23 +1,31 @@
 import styled from "styled-components";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
-import Proposal from "./Proposal";
+/* import Proposal from "./Proposal"; */
 import { colors } from "../../assets/styles/constants";
 
 export function ProposalsArea({ showProposals, setShowProposals }) {
+  const token = JSON.parse(localStorage.getItem("token"));
+
   return (
     <ProposalsContainer showProposals={showProposals}>
       <div className="show-proposals">
         <h1>PROPOSTAS DE TROCA</h1>
-        <AiOutlineEyeInvisible className="hide-icon" onClick={() => setShowProposals(false)}/>
+        <AiOutlineEyeInvisible
+          className="hide-icon"
+          onClick={() => setShowProposals(false)}
+        />
       </div>
 
-      {/* <p>Você precisa estar logado para ver suas propostas</p> */}
-      {/* <p>Nenhuma proposta para você no momento</p> */}
+      {!token ? (
+        <p>Você precisa estar logado para ver suas propostas</p>
+      ) : (
+        <p>Nenhuma proposta para você no momento</p>
+      )}
 
+      {/* <Proposal />
       <Proposal />
       <Proposal />
-      <Proposal />
-      <Proposal />
+      <Proposal /> */}
     </ProposalsContainer>
   );
 }
@@ -35,7 +43,7 @@ const ProposalsContainer = styled.div`
   font-size: 16px;
   transform: ${(props) => props.showProposals ? "translateX(0)" : "translateX(800px)"};
   transition: all 0.5s ease-out;
-  overflow-Y: scroll;
+  overflow-y: scroll;
   &::-webkit-scrollbar-thumb {
     background: ${colors.darkGreen};
     border-radius: 6px;
@@ -53,10 +61,10 @@ const ProposalsContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     h1 {
       font-size: 18px;
-      font-weight: 500;
+      font-weight: 600;
       border-bottom: 1px solid #000000;
     }
 
@@ -68,6 +76,6 @@ const ProposalsContainer = styled.div`
 
   @media (max-width: 400px) {
     width: 100%;
-    background-color: #CDCAB1;
+    background-color: #cdcab1;
   }
 `;

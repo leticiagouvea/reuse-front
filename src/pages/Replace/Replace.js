@@ -10,17 +10,18 @@ export function Replace() {
   return (
     <>
       <Header />
-        <ReplaceDetails>
-          <h1>DETALHES DA TROCA</h1>
-          <ProductsReplace />
-          <span>
-            <strong>letgouvea </strong>está esperando você entrar em contato para combinar a entrega
-          </span>
-          <button class="lightgreen hvr-icon-wobble-horizontal">
-            COMBINAR ENTREGA
-            <TbBrandWhatsapp className="hvr-icon" />
-          </button>
-        </ReplaceDetails>
+      <ReplaceDetails>
+        <h1>DETALHES DA TROCA</h1>
+        <ProductsReplace />
+        <span>
+          <strong>letgouvea </strong>está esperando você entrar em contato para
+          combinar a entrega
+        </span>
+        <button className="lightgreen hvr-icon-wobble-horizontal">
+          COMBINAR ENTREGA
+          <TbBrandWhatsapp className="hvr-icon" />
+        </button>
+      </ReplaceDetails>
       <Footer />
     </>
   );

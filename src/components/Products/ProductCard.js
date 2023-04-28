@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../assets/styles/constants";
 import { MdPersonPin } from "react-icons/md";
-import "hover.css";
 
 export function ProductCard() {
   return (
@@ -16,7 +15,7 @@ export function ProductCard() {
         <MdPersonPin className="user-icon" />
         <span>by <strong>letgouvea</strong></span>
       </div>
-      <button className="lightgreen hvr-wobble-horizontal">Ver detalhes</button>
+      <button className="lightgreen">Ver detalhes</button>
     </ProductContainer>
   );
 }
@@ -37,18 +36,20 @@ const ProductContainer = styled.div`
   &:hover {
     .info-product {
       img {
-        width: 300px;
-        height: 300px;
+        width: 350px;
+        height: 350px;
         transition-duration: 0.5s;
       }
+      
       .effect {
-        opacity: 0.5;
+        background-color: rgb(0, 0, 0, 50%);
       }
     }
   }
 
   button {
     width: 180px;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 20%);
   }
 
   .info-product {
@@ -62,8 +63,8 @@ const ProductContainer = styled.div`
     overflow: hidden;
 
     img {
-      width: 200px;
-      height: 180px;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       transition-duration: 0.5s;
     }
@@ -72,8 +73,7 @@ const ProductContainer = styled.div`
       position: absolute;
       width: 100%;
       height: 100%;
-      background-color: #000000;
-      opacity: 0.3;
+      background-color: rgb(0, 0, 0, 20%);
       transition: all 0.5s ease-out;
     }
 
@@ -85,9 +85,10 @@ const ProductContainer = styled.div`
       font-family: "Delicious Handrawn", cursive;
       font-size: 20px;
       text-align: center;
+      text-transform: lowercase;
+      text-shadow: 0px 0px 8px rgb(0 0 0 / 50%);
       line-height: 1.2;
       color: ${colors.beigeTone};
-      text-transform: lowercase;
     }
   }
 

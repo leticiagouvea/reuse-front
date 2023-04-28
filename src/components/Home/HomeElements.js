@@ -11,8 +11,8 @@ export function HomeElements() {
   const navigate = useNavigate();
 
   return (
-    <ElementsContainer>
-      <div className="left animate__animated animate__bounce">
+    <ElementsContainer className="animate__animated animate__bounceIn">
+      <div className="left">
         <img src={ReuseBox} alt="Re-Use" />
         
         <h1>
@@ -24,7 +24,7 @@ export function HomeElements() {
       <VerticalLine />
       <HorizontalLine />
 
-      <div className="right animate__animated animate__bounce">
+      <div className="right">
         <img src={Clothes} alt="Re-Use" />
         <div>
           <h2>

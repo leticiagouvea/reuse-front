@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import { colors } from "../../assets/styles/constants";
 import { Header, ProductCard } from "../../components";
+import "animate.css";
 
 export function Products() {
   return (
     <ContainerPage>
       <Header />
       <Title>ENCONTRAR TROCAS</Title>
-      <ProductsContainer>
+      <ProductsContainer className="animate__animated animate__fadeIn">
         <ProductCard />
         <ProductCard />
         <ProductCard />

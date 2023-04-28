@@ -17,7 +17,7 @@ export function ProposalsArea({ showProposals, setShowProposals }) {
       </div>
 
       {!token ? (
-        <p>Você precisa estar logado para ver suas propostas</p>
+        <p>Você precisa fazer login para visualizar suas propostas</p>
       ) : (
         <p>Nenhuma proposta para você no momento</p>
       )}

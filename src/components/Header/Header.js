@@ -10,12 +10,22 @@ import { colors, customTooltipStyle, customTooltipAccountStyle } from "../../ass
 import Logo from "../../assets/images/Logo.png";
 import UserContext from "../../context/UserContext";
 import { Account, ProposalsArea } from "../../components";
+import { toast } from "react-toastify";
 
 export function Header() {
   const { showProposals, setShowProposals } = useContext(UserContext);
   const { showAccount, setShowAccount } = useContext(UserContext);
+  const token = JSON.parse(localStorage.getItem("token"));
 
   const navigate = useNavigate();
+
+  const addProductPage = () => {
+    if (!token) {
+      return toast.warning("Você precisa fazer login para adicionar um produto! Acesse sua conta.");
+    }
+
+    navigate("/add-product");
+  };
 
   return (
     <>
@@ -42,7 +52,7 @@ export function Header() {
               className="header-icons"
               data-tooltip-id="header-tooltip"
               data-tooltip-content="Adicionar produto"
-              onClick={() => navigate("/add-product")}
+              onClick={addProductPage}
             />
             <MdOutlineNotificationsActive
               className="header-icons"

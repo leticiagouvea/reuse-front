@@ -1,15 +1,53 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Dropzone from "react-dropzone";
+import { toast } from "react-toastify";
 import { colors } from "../../assets/styles/constants";
 import { Header, Footer } from "../../components";
+import { postProduct } from "../../services/productApi";
 
 export function AddProduct() {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [image, setImage] = useState(null);
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
 
   const onDrop = (acceptedFiles) => {
     const file = acceptedFiles[0];
     setSelectedFile(file);
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = () => {
+      const buffer = reader.result;      
+      setImage(buffer);
+    };
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const body = {
+      name,
+      description,
+      image
+    };
+
+    try {
+      await postProduct(body);
+      toast.success("Produto adicionado com sucesso!");
+      resetForm();
+    } catch (error) {
+      toast.error("Algo deu errado, tente novamente mais tarde.");
+    }
+  };
+
+  const resetForm = () => {
+    setSelectedFile(null);
+    setImage(null);
+    setDescription("");
+    setName("");
   };
 
   return (
@@ -18,7 +56,7 @@ export function AddProduct() {
       <AddProductContainer>
         <h1>ADICIONAR PRODUTO</h1>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <label>Insira uma imagem:</label>
           <Dropzone onDrop={onDrop}>
             {({ getRootProps, getInputProps }) => (
@@ -36,12 +74,16 @@ export function AddProduct() {
           <input
             placeholder="Digite aqui o nome do produto"
             type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
           />
           <label>Descrição do produto:</label>
           <textarea
             placeholder="Adicione informações importantes, como: detalhes de tamanho, modelo, marca ou loja, e condições da peça..."
             type="text"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
             required
           />
           <button className="lightgreen hvr-float-shadow"> PUBLICAR </button>

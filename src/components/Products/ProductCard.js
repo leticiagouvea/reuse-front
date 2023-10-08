@@ -1,22 +1,63 @@
+import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
-import { colors } from "../../assets/styles/constants";
 import { MdPersonPin } from "react-icons/md";
+import { getProducts } from "../../services/productApi";
+import { colors } from "../../assets/styles/constants";
+import { Loading } from "../../components";
 
 export function ProductCard() {
-  return (
-    <ProductContainer>
-      <div className="info-product">
-        <div className="effect"></div>
-        <img src="https://www.equus.com.br/images/thumbs/0009673_jaqueta-jeans-com-barra-desfiada-e-desgastes_600.jpeg" alt="Product" />
-        <h2>Jaqueta Jeans</h2>
-      </div>
+  const [products, setProducts] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
-      <div className="username">
-        <MdPersonPin className="user-icon" />
-        <span>by <strong>letgouvea</strong></span>
-      </div>
-      <button className="lightgreen">Ver detalhes</button>
-    </ProductContainer>
+  const getProductsFunc = useCallback(async () => {
+    try {
+      const response = await getProducts();
+
+      setProducts(response);
+      setRefresh(false);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [refresh]);
+
+  useEffect(() => {
+    getProductsFunc();
+  }, [refresh]);
+
+  const convertByteToUrl = (byteArray) => {
+    const image = new Uint8Array(byteArray);
+    const blob = new Blob([image], { type: "image/jpeg" });
+    const imageUrl = URL.createObjectURL(blob);
+
+    return imageUrl;
+  };
+
+  return (
+    <>
+      {products?.length === 0 ? (
+        <Loading />
+      ) : (
+        <>
+          {products?.map((value, index) => (
+            <ProductContainer key={index}>
+              <div className="info-product">
+                <div className="effect"></div>
+                <img src={convertByteToUrl(value.image.data)} alt="Product" />
+                <h2>{value.name}</h2>
+              </div>
+
+              <div className="username">
+                <MdPersonPin className="user-icon" />
+                <span>
+                  by <strong>{value.users.username}</strong>
+                </span>
+              </div>
+              <button className="lightgreen">Ver detalhes</button>
+            </ProductContainer>
+          ))}
+        </>
+      )}
+    </>
   );
 }
 
@@ -40,7 +81,7 @@ const ProductContainer = styled.div`
         height: 350px;
         transition-duration: 0.5s;
       }
-      
+
       .effect {
         background-color: rgb(0, 0, 0, 50%);
       }

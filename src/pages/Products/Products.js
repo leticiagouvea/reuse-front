@@ -10,13 +10,6 @@ export function Products() {
       <Title>ENCONTRAR TROCAS</Title>
       <ProductsContainer className="animate__animated animate__fadeIn">
         <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
       </ProductsContainer>
     </ContainerPage>
   );

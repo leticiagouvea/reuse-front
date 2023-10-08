@@ -11,3 +11,4 @@ export * from "./Proposals/ProposalsArea";
 export * from "./Replace/OverlayReplace";
 export * from "./Replace/ProductsReplace";
 export * from "./Replace/SelectReplace";
+export * from "./Loading/Loading";

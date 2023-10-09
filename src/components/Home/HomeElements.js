@@ -89,6 +89,8 @@ const ElementsContainer = styled.div`
   }
 
   button {
+    width: 150px;
+    height: 30px;
     display: flex;
     align-items: center;
   }

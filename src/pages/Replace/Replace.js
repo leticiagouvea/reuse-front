@@ -21,7 +21,7 @@ export function Replace() {
         </span>
         <button className="lightgreen hvr-icon-wobble-horizontal">
           COMBINAR ENTREGA
-          <TbBrandWhatsapp className="hvr-icon" />
+          <TbBrandWhatsapp className="hvr-icon" />gg
         </button>
       </ReplaceDetails>
       <Footer />

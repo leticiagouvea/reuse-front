@@ -58,8 +58,6 @@ strong {
 	font-weight: 500;
 }
 button {
-    width: 150px;
-    height: 30px;
     border: 0px;
     border-radius: 5px;
     cursor: pointer;

@@ -71,6 +71,11 @@ const ProductReplace = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  button {
+    width: 150px;
+    height: 30px;
+  }
 `;
 
 const SelectProduct = styled.div`

@@ -1,4 +1,5 @@
 export * from "./Account/Account";
+export * from "./Account/OverlayAccount";
 export * from "./Footer/Footer";
 export * from "./Header/Header";
 export * from "./Home/HomeElements";

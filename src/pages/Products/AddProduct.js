@@ -150,6 +150,8 @@ const AddProductContainer = styled.div`
   }
 
   button {
+    width: 150px;
+    height: 30px;
     margin-top: 10px;
   }
 `;

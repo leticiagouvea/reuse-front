@@ -161,6 +161,8 @@ const Details = styled.div`
   }
 
   button {
+    width: 150px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;

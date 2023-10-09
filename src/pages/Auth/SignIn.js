@@ -27,7 +27,7 @@ export function SignIn() {
       localStorage.setItem("username", JSON.stringify(data.user.username));
 
       resetForm();
-      toast.success("Login feito com sucesso! Seja bem-vindo.");
+      toast.success("Login feito com sucesso. Seja bem-vindo!");
       navigate("/");
     } catch (error) {
       if (error.response.status === 401) {

@@ -41,6 +41,8 @@ export const AuthContainer = styled.div`
   }
 
   button {
+    width: 150px;
+    height: 30px;
     margin: 10px 0px 30px 0px;
   }
 

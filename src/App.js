@@ -4,7 +4,7 @@ import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import GlobalStyle from "../src/assets/styles/GlobalStyle";
 import UserContext from "./context/UserContext";
-import { OverlayProposals, OverlayReplace } from "./components";
+import { OverlayProposals, OverlayReplace, OverlayAccount } from "./components";
 import {
   Home,
   SignUp,
@@ -40,6 +40,10 @@ export default function App() {
         <OverlayProposals
           showProposals={showProposals}
           setShowProposals={setShowProposals}
+        />
+        <OverlayAccount
+          showAccount={showAccount}
+          setShowAccount={setShowAccount}
         />
         <OverlayReplace
           showWindowReplace={showWindowReplace}

@@ -4,9 +4,16 @@ import styled from "styled-components";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import { TbHomeEco, TbZoomReplace } from "react-icons/tb";
-import { MdOutlineNotificationsActive, MdOutlineAddToPhotos } from "react-icons/md";
+import {
+  MdOutlineNotificationsActive,
+  MdOutlineAddToPhotos,
+} from "react-icons/md";
 import { BsPersonLinesFill } from "react-icons/bs";
-import { colors, customTooltipStyle, customTooltipAccountStyle } from "../../assets/styles/constants";
+import {
+  colors,
+  customTooltipStyle,
+  customTooltipAccountStyle,
+} from "../../assets/styles/constants";
 import Logo from "../../assets/images/Logo.png";
 import UserContext from "../../context/UserContext";
 import { Account, ProposalsArea } from "../../components";
@@ -21,7 +28,9 @@ export function Header() {
 
   const addProductPage = () => {
     if (!token) {
-      return toast.warning("Você precisa fazer login para adicionar um produto! Acesse sua conta.");
+      return toast.warning(
+        "É necessário fazer login para adicionar um produto. Acesse sua conta ou cadastre-se!"
+      );
     }
 
     navigate("/add-product");
@@ -82,7 +91,11 @@ export function Header() {
         />
       </HeaderContainer>
 
-      <Account showAccount={showAccount} />
+      <Account 
+        showAccount={showAccount} 
+        setShowAccount={setShowAccount}
+        onClick={() => setShowAccount(true)}
+      />
 
       <ProposalsArea
         showProposals={showProposals}

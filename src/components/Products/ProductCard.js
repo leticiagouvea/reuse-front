@@ -90,6 +90,7 @@ const ProductContainer = styled.div`
 
   button {
     width: 180px;
+    height: 30px;
     box-shadow: 2px 2px 2px rgb(0 0 0 / 20%);
   }
 
